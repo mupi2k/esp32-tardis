@@ -1,7 +1,8 @@
-author: mongoose-os
-description: A Mongoose OS app skeleton
-version: 1.0
+author: mporter
+description: A Special App
+version: 1.5
 
+arch: ESP32
 libs_version: ${mos.version}
 modules_version: ${mos.version}
 mongoose_os_version: ${mos.version}
@@ -22,11 +23,21 @@ filesystem:
 # Below is a custom firmware configuration example.
 # Uncomment and modify according to your needs:
 
-# config_schema:
-#  - ["my_app", "o", {title: "My app custom settings"}]
-#  - ["my_app.bool_value", "b", false, {title: "Some boolean value"}]
-#  - ["my_app.string_value", "s", "", {title: "Some string value"}]
-#  - ["my_app.int_value", "i", 123, {title: "Some integer value"}]
+config_schema:
+  - ["tardis_app", "o", {title: "TARDIS custom settings"}]
+#  - ["tardis_app.bool_value", "b", false, {title: "Some boolean value"}]
+#  - ["tardis_app.string_value", "s", "", {title: "Some string value"}]
+#  - ["tardis_app.int_value", "i", 123, {title: "Some integer value"}]
+  - ["board.ledT.pin", "i", 5, {title: "LED GPIO pin"}]
+  - ["board.led1.active_high", "b", false, {title: "True if LED is on when output is high (1)"}]
+  - ["board.ledA.pin", "i", 16, {title: "LED GPIO pin"}]
+  - ["board.ledA.active_high", "b", false, {title: "True if LED is on when output is high (1)"}]
+  - ["board.ledB.pin", "i", 17, {title: "LED GPIO pin"}]
+  - ["board.ledB.active_high", "b", false, {title: "True if LED is on when output is high (1)"}]
+  - ["board.ledC.pin", "i", 18, {title: "LED GPIO pin"}]
+  - ["board.ledC.active_high", "b", false, {title: "True if LED is on when output is high (1)"}]
+  - ["board.ledD.pin", "i", 19, {title: "LED GPIO pin"}]
+  - ["board.ledD.active_high", "b", false, {title: "True if LED is on when output is high (1)"}]
 
 # These settings get compiled into the C structure, and can be accessed
 # from the C code this way:
@@ -51,6 +62,32 @@ libs:
   - origin: https://github.com/mongoose-os-libs/rpc-service-config
   - origin: https://github.com/mongoose-os-libs/rpc-service-fs
   - origin: https://github.com/mongoose-os-libs/rpc-uart
-
+  - origin: https://github.com/mongoose-os-libs/rpc-loopback
+  - origin: https://github.com/mongoose-os-libs/rpc-mqtt
+  - origin: https://github.com/mongoose-os-libs/rpc-service-atca
+  - origin: https://github.com/mongoose-os-libs/rpc-service-ota
+  - origin: https://github.com/mongoose-os-libs/rpc-service-wifi
+  - origin: https://github.com/mongoose-os-libs/rpc-service-gpio
+  - origin: https://github.com/mongoose-os-libs/rpc-ws
+  - origin: https://github.com/mongoose-os-libs/wifi
+  - origin: https://github.com/mongoose-os-libs/mjs
+  - origin: https://github.com/mongoose-os-libs/dash
+  - origin: https://github.com/mongoose-os-libs/aws
+  - origin: https://github.com/mongoose-os-libs/adc
+  - origin: https://github.com/mongoose-os-libs/atca
+  - origin: https://github.com/mongoose-os-libs/bt-service-debug
+  - origin: https://github.com/mongoose-os-libs/dns-sd
+  - origin: https://github.com/mongoose-os-libs/i2c
+  - origin: https://github.com/mongoose-os-libs/shadow
+  - origin: https://github.com/mongoose-os-libs/ota-shadow
+  - origin: https://github.com/mongoose-os-libs/ota-http-client
+  - origin: https://github.com/mongoose-os-libs/ota-http-server
+  - origin: https://github.com/mongoose-os-libs/spi
+  - origin: https://github.com/mongoose-os-libs/vfs-dev-spi-flash
+  - origin: https://github.com/mongoose-os-libs/core
+  - origin: https://github.com/mongoose-os-libs/http-server
+  - origin: https://github.com/mongoose-os-libs/provision
+  - origin: https://github.com/mongoose-os-libs/sntp
+  - origin: https://github.com/mongoose-os-libs/pwm
 # Used by the mos tool to catch mos binaries incompatible with this file format
 manifest_version: 2017-09-29
