@@ -1,6 +1,6 @@
 author: mporter
-description: A Special App
-version: 1.5
+description: Tardis Alert Remote Display Information System
+version: 1.7.4
 
 arch: ESP32
 libs_version: ${mos.version}
@@ -38,6 +38,7 @@ config_schema:
   - ["board.ledC.active_high", "b", false, {title: "True if LED is on when output is high (1)"}]
   - ["board.ledD.pin", "i", 19, {title: "LED GPIO pin"}]
   - ["board.ledD.active_high", "b", false, {title: "True if LED is on when output is high (1)"}]
+  - ["provision.led.pin", "i", 5, {title: "LED provisioning indicator"}]
 
 # These settings get compiled into the C structure, and can be accessed
 # from the C code this way:
